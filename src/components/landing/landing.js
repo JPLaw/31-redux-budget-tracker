@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as expenseActions from '../../action/action-expense';
-import ExpenseForm from '../expense-form/expense-form';
-import Expense from '../expense-item/expense-item';
+import * as categoryActions from '../../action/category-action';
+import CategoryForm from '../category-form/category-form';
+import Category from '../category/category';
 
 class Landing extends React.Component {
   render() {
-    const { expenses, expenseCreate } = this.props;
+    const { categories, categoryCreate } = this.props;
     return (
       <div>
-        <ExpenseForm onComplete={expenseCreate} />
+        <CategoryForm onComplete={categoryCreate} />
         {
-          expenses.map((currentExpense, i) => <Expense expense={currentExpense} key={i}/>)
+          categories.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
         }
       </div>
     );
@@ -20,19 +20,19 @@ class Landing extends React.Component {
 }
 
 Landing.propTypes = {
-  expenses: PropTypes.array,
-  expenseCreate: PropTypes.func,
+  categories: PropTypes.array,
+  categoryCreate: PropTypes.func,
 };
 
 const mapStateToProps = (store) => {
   return {
-    expenses: store,
+    categories: store,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    expensesCreate: data => dispatch(expenseActions.create(data)),
+    categoriesCreate: data => dispatch(categoryActions.create(data)),
   };
 };
 

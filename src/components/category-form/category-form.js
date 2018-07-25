@@ -7,10 +7,10 @@ const defaultState = {
   // titleCost: [],
 };
 
-export default class ExpenseForm extends React.Component {
+export default class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.expense || defaultState;
+    this.state = this.props.category || defaultState;
   }
 
   handleChange = (event) => {
@@ -26,7 +26,7 @@ export default class ExpenseForm extends React.Component {
   }
 
   render() {
-    const buttonText = this.props.expense ? 'Update' : 'Create';
+    const buttonText = this.props.category ? 'Update' : 'Create';
     return (
       <form
         onSubmit={ this.handleSubmit }
@@ -53,7 +53,7 @@ export default class ExpenseForm extends React.Component {
   }
 }
 
-ExpenseForm.propTypes = {
+CategoryForm.propTypes = {
   onComplete: PropTypes.func,
-  expense: PropTypes.object,
+  category: PropTypes.object,
 };
