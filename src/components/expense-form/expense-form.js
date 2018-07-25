@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const defaultState = {
   title: '',
   cost: 0,
-  titleCost: [],
+  // titleCost: [],
 };
 
 export default class ExpenseForm extends React.Component {

@@ -8,7 +8,7 @@ export default class App extends React.Component {
       <div className="app">
         <BrowserRouter>
           <div>
-            <h1>YAAAAASSSSSSS</h1>
+            <h1>Budget Tracker</h1>
             <nav>
                 <ul>
                   <li><Link to="/">Home</Link></li>

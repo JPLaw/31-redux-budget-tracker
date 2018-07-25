@@ -1,10 +1,15 @@
 @import "vars";
 
+.nav {
+  display: inline;
+  margin-left: $pad * 2;
+}
 
 // content
 html, body {
   position: relative; 
   font-family: $font-primary;
+  margin-left: 10%;
 }
 head, script, link  { display: none; }
 p { display: inline-block; }
@@ -13,7 +18,7 @@ em { font-style: italic; }
 strong { font-weight: bold; }
 
 body {
-  background: $color-darkcyan;
+  background: $color-azulverde;
   font-size: 16px;
 }
 
@@ -37,6 +42,7 @@ blockquote {
 label {
   font-size: 1.25em;
   font-weight: bolder;
+  margin-top: $pad;
   margin-bottom: $pad;
 }
 
@@ -49,8 +55,8 @@ textarea, input {
   transition: 350ms all;
 
   &:focus {
-    background: $color-black;
-    color: $color-white;
+    background: $color-ivory;
+    color: $color-lightgrey;
   }
 
   &::placeholder {
@@ -63,31 +69,22 @@ button {
 }
 
 button,input[type="submit"] {
-  background: $color-lightgrey;
+  background: $color-bolivia;
   padding: $pad;
   border: none;
   border-radius: 3px;
 
   &:hover {
-    background: $color-grey;
+    background: $color-jacaranda;
   }
 
   &:active {
-    background: $color-darkgrey;
+    background: $color-jacaranda;
   }
 }
 
-footer {
-  height: 40px;
-  background: #000;
-  border-top: solid 5px #fff;
-  margin-top: 100px;
-}
 
 // lists
 ul,ol,li { margin-left: $pad * 2; }
-li { display: list-item; }
-ul li { list-style: disc; }
-ol li { list-style: decimal; }
-ol ol li , ul ol li { list-style: lower-alpha; }
-ol ul li , ul ul li { list-style: square; }
+li { display: inline-block; }
+ul li { list-style: none; }
