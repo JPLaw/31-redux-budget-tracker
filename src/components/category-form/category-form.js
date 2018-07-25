@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const defaultState = {
   title: '',
-  cost: 0,
+  cost: '',
   // titleCost: [],
 };
 
@@ -29,14 +29,12 @@ export default class CategoryForm extends React.Component {
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
       <form
-        onSubmit={ this.handleSubmit }
-        className="expense-form"
-      >
+        onSubmit={ this.handleSubmit } className="category-form">
       <input
       type="text"
       name="title"
       placeholder="title"
-      value={this.state.value}
+      value={this.state.title}
       onChange={this.handleChange}
       />
       <input

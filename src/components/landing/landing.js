@@ -32,7 +32,7 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    categoriesCreate: data => dispatch(categoryActions.create(data)),
+    categoryCreate: data => dispatch(categoryActions.create(data)),
   };
 };
 
