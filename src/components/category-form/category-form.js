@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const defaultState = {
   title: '',
   cost: '',
-  // titleCost: [],
 };
 
 export default class CategoryForm extends React.Component {
