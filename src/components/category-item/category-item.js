@@ -4,6 +4,13 @@ import { connect } from 'react-redux';
 import CategoryForm from '../category-form/category-form';
 import * as categoryActions from '../../action/category-action';
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    categoryRemove: data => dispatch(categoryActions.remove(data)),
+    categoryUpdate: data => dispatch(categoryActions.update(data)),
+  };
+};
+
 class Category extends React.Component {
   render() {
     const {
@@ -30,11 +37,5 @@ Category.propTypes = {
   categoryUpdate: PropTypes.func,
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    categoryRemove: data => dispatch(categoryActions.remove(data)),
-    categoryUpdate: data => dispatch(categoryActions.update(data)),
-  };
-};
 
 export default connect(null, mapDispatchToProps)(Category);
