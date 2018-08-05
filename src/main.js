@@ -1,21 +1,20 @@
 import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 
-// Lines 5 and 6 accomplish the same thing
-// import ReactDom from 'react-dom';
 import { render as renderDom } from 'react-dom';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './components/app/app';
 import categoriesReducer from './reducer/category-reducer';
+// import reducer from './reducer/main';
 import './style/main.scss';
 
-// Setting up the Redux store here
-const middleware = {};
+import reporter from './lib/middleware/redux-reporter';
+import session from './lib/middleware/redux-session';
 
-// this if function composition
-const store = createStore(categoriesReducer, composeWithDevTools(applyMiddleware(...middleware)));
+
+const store = createStore(categoriesReducer, composeWithDevTools(applyMiddleware(reporter, session)));
 
 const root = document.createElement('div');
 document.body.appendChild(root);
