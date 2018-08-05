@@ -7,7 +7,7 @@ import Category from '../category/category';
 
 const mapStateToProps = (store) => {
   return {
-    categories: store,
+    categories: store.categories,
   };
 };
 
@@ -23,7 +23,6 @@ class Landing extends React.Component {
     return (
       <div>
         <CategoryForm onComplete={categoryCreate} />
-        {/* <h2>Your Categories</h2> */}
         {
           categories.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
         }

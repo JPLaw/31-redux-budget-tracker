@@ -27,6 +27,7 @@ export default class ExpenseForm extends React.Component {
       ...this.state,
       categoryId,
     });
+    this.setState(defaultState);
   }
 
   render() {
