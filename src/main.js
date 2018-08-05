@@ -1,8 +1,6 @@
 import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 
-// Lines 5 and 6 accomplish the same thing
-// import ReactDom from 'react-dom';
 import { render as renderDom } from 'react-dom';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -11,10 +9,8 @@ import App from './components/app/app';
 import categoriesReducer from './reducer/category-reducer';
 import './style/main.scss';
 
-// Setting up the Redux store here
 const middleware = {};
 
-// this if function composition
 const store = createStore(categoriesReducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 const root = document.createElement('div');
