@@ -28,6 +28,7 @@ export default class CategoryForm extends React.Component {
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
       <form
+        data-cy="category-form"
         onSubmit={ this.handleSubmit } className="category-form">
       <input
       type="text"

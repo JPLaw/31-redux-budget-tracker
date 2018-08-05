@@ -1,5 +1,5 @@
 describe('Testing budget tracker app', () => {
-  it('Should create a new category and a new expense and delete them', () => {
+  it('Should create a new category, a new expense and delete them', () => {
     expect(true).to.equal(true);
     
     cy.visit('http://localhost:8080');
@@ -9,7 +9,7 @@ describe('Testing budget tracker app', () => {
     
     cy.get('form[data-cy=category-form] input[type=number]')
       .clear()
-      .type('100')
+      .type('50')
     
     cy.get('form[data-cy=category-form]')
       .submit();

@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CategoryForm from '../category-form/category-form';
 import * as categoryActions from '../../action/category-action';
+import './category.scss';
+// import Expense from '../expense/expense';
+// import ExpenseForm from '../expense-form/expense-form';
+import * as expenseActions from '../../action/expense-action';
 
 class Category extends React.Component {
   render() {
@@ -11,9 +15,10 @@ class Category extends React.Component {
       key,
       categoryRemove,
       categoryUpdate,
+      expenseCreate,
     } = this.props;
     return (
-      <div className="category" key={key}>
+      <div className="category" key={key} data-cy="category">
         <h3> { category.title }</h3>
         <p> Cost: {category.cost} </p>
         <CategoryForm category={category} onComplete={categoryUpdate}/>
@@ -34,6 +39,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     categoryRemove: data => dispatch(categoryActions.remove(data)),
     categoryUpdate: data => dispatch(categoryActions.update(data)),
+    expenseCreate: data => dispatch(expenseActions.createExpense(data)),
   };
 };
 
