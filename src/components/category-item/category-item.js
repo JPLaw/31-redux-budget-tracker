@@ -8,6 +8,13 @@ import './category.scss';
 // import ExpenseForm from '../expense-form/expense-form';
 import * as expenseActions from '../../action/expense-action';
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    categoryRemove: data => dispatch(categoryActions.remove(data)),
+    categoryUpdate: data => dispatch(categoryActions.update(data)),
+  };
+};
+
 class Category extends React.Component {
   render() {
     const {

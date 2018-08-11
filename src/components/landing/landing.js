@@ -1,9 +1,21 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import * as categoryActions from '../../action/category-action';
 import CategoryForm from '../category-form/category-form';
-import Category from '../category/category';
+import Category from '../category-item/category-item';
+
+const mapStateToProps = (store) => {
+  return {
+    categories: store,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    categoryCreate: data => dispatch(categoryActions.create(data)),
+  };
+};
 
 const mapStateToProps = (store) => {
   return {
@@ -23,9 +35,11 @@ class Landing extends React.Component {
     return (
       <div>
         <CategoryForm onComplete={categoryCreate} />
+        <ul>
         {
           categories.map((currentCategory, i) => <Category category={currentCategory} key={i}/>)
         }
+        </ul>
       </div>
     );
   }
