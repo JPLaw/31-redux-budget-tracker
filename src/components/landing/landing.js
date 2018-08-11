@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+
 class Landing extends React.Component {
   render() {
     const { categories, categoryCreate } = this.props;
