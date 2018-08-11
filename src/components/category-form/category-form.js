@@ -27,8 +27,9 @@ export default class CategoryForm extends React.Component {
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
+      <fieldset className="category-form" data-cy="category-form" >
       <form
-        data-cy="category-form"
+        // data-cy="category-form"
         onSubmit={ this.handleSubmit } className="category-form">
       <input
       type="text"
@@ -47,6 +48,7 @@ export default class CategoryForm extends React.Component {
       />
       <button type="submit">{buttonText}</button>
       </form>
+    </fieldset>
     );
   }
 }

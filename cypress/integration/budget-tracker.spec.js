@@ -24,7 +24,7 @@ describe('Testing budget tracker app', () => {
 
     cy.get('form[data-cy=expense-form] input[type=number]')
       .clear()
-      .type('50');
+      .type('25');
 
     cy.get('form[data-cy=expense-form]').submit();
 

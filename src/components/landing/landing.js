@@ -17,17 +17,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const mapStateToProps = (store) => {
-  return {
-    categories: store.categories,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    categoryCreate: data => dispatch(categoryActions.create(data)),
-  };
-};
 
 class Landing extends React.Component {
   render() {
